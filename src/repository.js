@@ -12,4 +12,5 @@ function createWordsArrayFromDictionary() {
 
 module.exports = {
     createWordsArrayFromDictionary,
+    allWordsTest: createWordsArrayFromDictionary()
 }
