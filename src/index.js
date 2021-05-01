@@ -23,4 +23,12 @@ function countByLetter(letter) {
     console.log(`result: ${counter}`)
 
 }
-countByLetter('a')
+function isWordExist(word) {
+    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
+    const allWords = dictionariStr.split('\n')
+    const result = allWords.some((dictWord) => dictWord === word)
+    console.log(result ? 'Yes' : 'No')
+}
+
+isWordExist('nikita')
+
