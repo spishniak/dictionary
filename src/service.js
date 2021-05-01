@@ -1,10 +1,11 @@
-const fs = require('fs')
+const repository = require('./repository')
+const createWordsArrayFromDictionary = repository.createWordsArrayFromDictionary
+
 
 
 
 function countAllWordStartingFrom(letter) {
-    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
-    const allWords = dictionariStr.split('\n')
+    const allWords = createWordsArrayFromDictionary()
     let counter = 0
     let isAnyMatches = false
 
@@ -24,15 +25,13 @@ function countAllWordStartingFrom(letter) {
 
 }
 function isWordExist(word) {
-    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
-    const allWords = dictionariStr.split('\n')
+    const allWords = createWordsArrayFromDictionary()
     const result = allWords.some((dictWord) => dictWord === word)
     console.log(result ? 'Yes' : 'No')
 }
 
 function countWordsWithSubstring(substring) {
-    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
-    const allWords = dictionariStr.split('\n')
+    const allWords = createWordsArrayFromDictionary()
     const result = allWords.filter((dictWord) => dictWord.includes(substring))
     console.log(result.length)
 }
