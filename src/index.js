@@ -23,4 +23,13 @@ function countByLetter(letter) {
     console.log(`result: ${counter}`)
 
 }
-countByLetter('a')
+
+const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
+const allWords = dictionariStr.split('\n')
+const name = 'beer'
+const result = allWords.some((word) => word === name)
+console.log(result ? 'Yes': 'No')
+
+
+
+
