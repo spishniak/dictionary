@@ -2,7 +2,7 @@ const fs = require('fs')
 
 
 
-function countByLetter(letter) {
+function countAllWordStartingFrom(letter) {
     const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
     const allWords = dictionariStr.split('\n')
     let counter = 0
@@ -30,5 +30,10 @@ function isWordExist(word) {
     console.log(result ? 'Yes' : 'No')
 }
 
-isWordExist('nikita')
-
+function isWords(word) {
+    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
+    const allWords = dictionariStr.split('\n')
+    const result = allWords.filter((collocation) => collocation.includes(word))
+    console.log(result.length)
+}
+isWords('a') 
