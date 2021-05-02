@@ -1,11 +1,11 @@
 const repository = require('./repository')
-const createWordsArrayFromDictionary = repository.createWordsArrayFromDictionary
+const arrayFromEnglishTxt = repository.arrayFromEnglishTxt
 
 
 
 
 function countAllWordStartingFrom(letter) {
-    const allWords = createWordsArrayFromDictionary()
+    const allWords = arrayFromEnglishTxt()
     let counter = 0
     let isAnyMatches = false
 
@@ -25,13 +25,13 @@ function countAllWordStartingFrom(letter) {
 
 }
 function isWordExist(word) {
-    const allWords = createWordsArrayFromDictionary()
+    const allWords = arrayFromEnglishTxt()
     const result = allWords.some((dictWord) => dictWord === word)
     console.log(result ? 'Yes' : 'No')
 }
 
 function countWordsWithSubstring(substring) {
-    const allWords = createWordsArrayFromDictionary()
+    const allWords = arrayFromEnglishTxt()
     const result = allWords.filter((dictWord) => dictWord.includes(substring))
     console.log(result.length)
 }

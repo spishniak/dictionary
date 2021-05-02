@@ -1,8 +1,8 @@
 const fs = require('fs')
 
 
-function createWordsArrayFromDictionary() {
-    const dictionariStr = fs.readFileSync('../dictionary.txt').toString()
+function arrayFromEnglishTxt() {
+    const dictionariStr = fs.readFileSync('../resource/english.txt').toString()
     const allWords = dictionariStr.split('\n')
 
     return allWords
@@ -11,5 +11,5 @@ function createWordsArrayFromDictionary() {
 
 
 module.exports = {
-    createWordsArrayFromDictionary,
+    arrayFromEnglishTxt,
 }
