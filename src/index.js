@@ -1,4 +1,5 @@
-const service = require('./service')
+const  {translateEnglRus, translateRusEng} = require('./service')
 
 
-service.countAllWordStartingFrom('z')
+translateEnglRus('boy')
+translateRusEng('парень')

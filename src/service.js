@@ -1,7 +1,4 @@
-const repository = require('./repository')
-const arrayFromEnglishTxt = repository.arrayFromEnglishTxt
-
-
+const { arrayFromEnglishTxt, getEngRusJson, getRusEngJson } = require('./repository')
 
 
 function countAllWordStartingFrom(letter) {
@@ -36,8 +33,31 @@ function countWordsWithSubstring(substring) {
     console.log(result.length)
 }
 
+
+
+
+function translateEnglRus(word) {
+    const result = getEngRusJson()[word.toUpperCase()]
+
+    if (result) {
+        console.log(result)
+    } else {
+        console.log('not found')
+    }
+}
+function translateRusEng(word) {
+    const result = getRusEngJson()[word.toUpperCase()]
+
+    if (result) {
+        console.log(result)
+    } else {
+        console.log('not found')
+    }
+}
 module.exports = {
     countAllWordStartingFrom,
     isWordExist,
     countWordsWithSubstring,
+    translateEnglRus,
+    translateRusEng,
 }

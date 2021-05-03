@@ -9,7 +9,18 @@ function arrayFromEnglishTxt() {
 }
 
 
+function getEngRusJson(){
+    return require('../resource/eng-rus.json') 
+}
+
+
+function getRusEngJson(){
+    return require('../resource/rus-eng.json')
+}
+
 
 module.exports = {
     arrayFromEnglishTxt,
+    getEngRusJson,
+    getRusEngJson,
 }
